@@ -11,6 +11,14 @@
 
     </form>
 
+    <form action="voteForBestMovie" method="PUT">
+        <p>Your name: <input type="text" name="voterName"></p>
+        <select name="movieId">
+            <option value="0">select movie</option>
+            <option th:each="movie: ${movies}" th:value="${movie.id}" th:text="${movie.title}"></option>
+        </select>
+        <input type="Submit">
+    </form>
     <p th:text="'Your favorite movie is: ' + ${BestMovieVote}"></p>
 </body>
 </html>
